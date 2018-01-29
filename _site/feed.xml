@@ -6,9 +6,60 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 21 Jan 2018 23:25:31 +0800</pubDate>
-    <lastBuildDate>Sun, 21 Jan 2018 23:25:31 +0800</lastBuildDate>
+    <pubDate>Tue, 30 Jan 2018 01:22:44 +0800</pubDate>
+    <lastBuildDate>Tue, 30 Jan 2018 01:22:44 +0800</lastBuildDate>
     <generator>Jekyll v3.7.0</generator>
+    
+      <item>
+        <title>关于回车的故事</title>
+        <description>&lt;p&gt;很多年前人类还在流行机械统治世界的时候，有几个神人闲的蛋疼发明了机械式打印机，那个机器打起自来噼里啪啦，每按一个键，就会翻上去一个字母狠狠撞击在纸上，留下美丽的痕迹。每打一个字那个打字的小车Carriage移动一下，令人心旷神怡。&lt;br /&gt;
+打完了一个段落，打字员会做两件事情：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;把那个小车用手刨到最左边档头上。注意了这个动作用汉语非常简洁的概括了叫做”回车”！没错！就是回那个车车，看清楚了就是把那个车回到头上，使动用法。英文叫Carriage-Return 简称CR&lt;/li&gt;
+  &lt;li&gt;把那个纸卷一下，这样车车回对着下一行开始的地方，也就是换行。英文叫Line-Feed LF&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;对了 这回说清楚了 一点毛病没有 继续噼里啪啦开始打字&lt;br /&gt;
+回到正题 等于这里面用了两个标志 CR 和 LF&lt;br /&gt;
+windows就是这样记录的 巴巴适适的 回车和换行&lt;br /&gt;
+结果尼玛不晓得类Unix的程序员是脑壳达铁了还是怎么了&lt;br /&gt;
+觉得那个打字机是历史习惯问题，我用两个标志来表示的”光标移动到下一行开头” 是一件很傻逼的事情 如果一篇文本里面有很多是很浪费的 比如有个人叫李白的人喜欢竖着写字：&lt;br /&gt;
+床前 (光标移动到下一行开头)&lt;br /&gt;
+明月 (光标移动到下一行开头)&lt;br /&gt;
+光 (光标移动到下一行开头)&lt;br /&gt;
+假设一个汉字占一个单位 光标移动到下一行开头占两个单位 那么这个”光标移动到下一行开头”占用的空间比尼玛内容还多一个单位 怎么可能&lt;br /&gt;
+所以那个我完全可以定义一个标志来表示 LF足矣&lt;/p&gt;
+
+&lt;p&gt;至于用的哪种实际上用户直观感觉不到， 直观感觉就是按了一下enter键 然后光标跑下一行首了&lt;br /&gt;
+这个动作实际上是编辑器自己完成的 而在背后识别是完全不懂的两种记录方式。。。&lt;/p&gt;
+
+&lt;p&gt;不要以为这只是一个故事&lt;br /&gt;
+千万千万要搞清楚&lt;br /&gt;
+不然的话。。。&lt;br /&gt;
+CRLF&lt;br /&gt;
+LF&lt;br /&gt;
+CRLF&lt;br /&gt;
+CRLF&lt;br /&gt;
+LF&lt;br /&gt;
+CRLF&lt;br /&gt;
+CRLF&lt;br /&gt;
+LF&lt;br /&gt;
+LF&lt;br /&gt;
+CRLF&lt;/p&gt;
+
+&lt;p&gt;你就会跟哥一样惨&lt;/p&gt;
+
+&lt;p align=&quot;right&quot;&gt;Jude&lt;/p&gt;
+&lt;p align=&quot;right&quot;&gt;2018年1月28日&lt;/p&gt;
+</description>
+        <pubDate>Sun, 28 Jan 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/other/2018/01/28/about-enter.html</link>
+        <guid isPermaLink="true">http://localhost:4000/other/2018/01/28/about-enter.html</guid>
+        
+        
+        <category>other</category>
+        
+      </item>
     
       <item>
         <title>这是一篇影评</title>
@@ -78,7 +129,8 @@
 经过这个事故，我的眼镜丢了，大学配的眼镜，陪了我十多年，代替我，留在了这片茫茫的海中。&lt;br /&gt;
 回到岸上，活生生捡了一条命，感谢两位大叔。&lt;br /&gt;
 拖着疲惫的身躯往回走去看到一面红旗在飘摇，定睛一看， 此处禁止游泳&lt;br /&gt;
-。。。。。。。。&lt;/p&gt;
+。。。。。。。。&lt;br /&gt;
+….&lt;/p&gt;
 
 &lt;p&gt;#后：
 自从许朝军离开了人人网混乱了以后就在没有地方可以写日志了，老许去追求独特的感官，搞了一个app叫啪啪。&lt;br /&gt;

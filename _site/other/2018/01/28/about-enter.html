@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>大帅归来</title>
-  <meta name="description" content="The world has kissed my soul with its pain, asking for its return in songs. 世界以痛吻我，我要报之以歌。
-">
+  <title>关于回车的故事</title>
+  <meta name="description" content="很多年前人类还在流行机械统治世界的时候，有几个神人闲的蛋疼发明了机械式打印机，那个机器打起自来噼里啪啦，每按一个键，就会翻上去一个字母狠狠撞击在纸上，留下美丽的痕迹。每打一个字那个打字的小车Carriage移动一下，令人心旷神怡。打完了一个段落，打字员会做两件事情：  把那个小车用手刨到最左边档头上。注意了这个动...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/other/2018/01/28/about-enter.html">
   <link rel="alternate" type="application/rss+xml" title="大帅归来" href="http://localhost:4000/feed.xml">
 </head>
 
@@ -55,58 +54,57 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">关于回车的故事</h1>
+    <p class="post-meta"><time datetime="2018-01-28T00:00:00+08:00" itemprop="datePublished">Jan 28, 2018</time></p>
+  </header>
 
+  <div class="post-content" itemprop="articleBody">
+    <p>很多年前人类还在流行机械统治世界的时候，有几个神人闲的蛋疼发明了机械式打印机，那个机器打起自来噼里啪啦，每按一个键，就会翻上去一个字母狠狠撞击在纸上，留下美丽的痕迹。每打一个字那个打字的小车Carriage移动一下，令人心旷神怡。<br />
+打完了一个段落，打字员会做两件事情：</p>
+<ol>
+  <li>把那个小车用手刨到最左边档头上。注意了这个动作用汉语非常简洁的概括了叫做”回车”！没错！就是回那个车车，看清楚了就是把那个车回到头上，使动用法。英文叫Carriage-Return 简称CR</li>
+  <li>把那个纸卷一下，这样车车回对着下一行开始的地方，也就是换行。英文叫Line-Feed LF</li>
+</ol>
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Jan 28, 2018</span>
+<p>对了 这回说清楚了 一点毛病没有 继续噼里啪啦开始打字<br />
+回到正题 等于这里面用了两个标志 CR 和 LF<br />
+windows就是这样记录的 巴巴适适的 回车和换行<br />
+结果尼玛不晓得类Unix的程序员是脑壳达铁了还是怎么了<br />
+觉得那个打字机是历史习惯问题，我用两个标志来表示的”光标移动到下一行开头” 是一件很傻逼的事情 如果一篇文本里面有很多是很浪费的 比如有个人叫李白的人喜欢竖着写字：<br />
+床前 (光标移动到下一行开头)<br />
+明月 (光标移动到下一行开头)<br />
+光 (光标移动到下一行开头)<br />
+假设一个汉字占一个单位 光标移动到下一行开头占两个单位 那么这个”光标移动到下一行开头”占用的空间比尼玛内容还多一个单位 怎么可能<br />
+所以那个我完全可以定义一个标志来表示 LF足矣</p>
 
-        <h2>
-          <a class="post-link" href="/other/2018/01/28/about-enter.html">关于回车的故事</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 21, 2018</span>
+<p>至于用的哪种实际上用户直观感觉不到， 直观感觉就是按了一下enter键 然后光标跑下一行首了<br />
+这个动作实际上是编辑器自己完成的 而在背后识别是完全不懂的两种记录方式。。。</p>
 
-        <h2>
-          <a class="post-link" href="/other/2018/01/21/ying-ping.html">这是一篇影评</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 28, 2017</span>
+<p>不要以为这只是一个故事<br />
+千万千万要搞清楚<br />
+不然的话。。。<br />
+CRLF<br />
+LF<br />
+CRLF<br />
+CRLF<br />
+LF<br />
+CRLF<br />
+CRLF<br />
+LF<br />
+LF<br />
+CRLF</p>
 
-        <h2>
-          <a class="post-link" href="/other/2017/09/28/zou-si-fang.html">游记</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 30, 2017</span>
+<p>你就会跟哥一样惨</p>
 
-        <h2>
-          <a class="post-link" href="/other/2017/08/30/first-day.html">重新用回Linux</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 29, 2017</span>
+<p align="right">Jude</p>
+<p align="right">2018年1月28日</p>
 
-        <h2>
-          <a class="post-link" href="/jekyll/update/2017/08/29/welcome-to-jekyll.html">Welcome to Jekyll!</a>
-        </h2>
-      </li>
-    
-  </ul>
+  </div>
 
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-
-</div>
+</article>
 
       </div>
     </div>
