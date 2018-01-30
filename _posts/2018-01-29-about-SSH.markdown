@@ -1,0 +1,120 @@
+﻿---
+layout: post
+title:  "关于SSH"
+date:   2018-01-29 
+categories: other
+---
+
+# RSA算法
+RSA公钥加密算法是1977年由三个麻省理工的罗纳德·李维斯特（Ron Rivest）、阿迪·萨莫尔（Adi Shamir）和伦纳德·阿德曼（Leonard Adleman）一起提出的。  
+好我们来看一下这个三个帅哥跟哥到底哪个帅-_-  
+![三个帅哥](http://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=405938069b504fc2b652b85784b48c74/d01373f082025aafcb78cac5fbedab64034f1a71.jpg "你遭烧了哈哈哈")  
+（其实顺便是测试用markdown外连图片是不是可行的 或者图片挂了跑不出来或者鼠标悬停上去会出现什么字段 啊哈哈哈测试成功)  
+RSA是目前最有影响力和最常用的公钥加密算法，它能够抵抗到目前为止已知的绝大多数密码攻击  
+今天只有短的RSA钥匙才可能被强力方式解破。到2008年为止，世界上还没有任何可靠的攻击RSA算法的方式。只要其钥匙的长度足够长，用RSA加密的信息实际上是不能被解破的。  
+  
+原理一句话说明 非常简单简单到不行 一个十分简单的数论事实：将两个大质数相乘十分容易，但是想要对其乘积进行因式分解却极其困难，因此可以将乘积公开作为加密密钥。  
+我随便找两个非常大的质数p和q，这么大（两只手伸直了185cm），然后做一个乘法运算算出来m=pq 好了 我手上一共三个数 p q m 他们之间有非常简单的关系 然后我把m送给你作为公开加密密钥 但是这时候你依靠徒劳的j算是几乎不可能得出p和q的 因为实在太大了。  
+
+
+类似的在公开密钥密码体制中，加密密钥（即公开密钥）m是公开信息，而解密密钥（即秘密密钥）p是需要保密的。加密算法E和解密算法D也都是公开的。虽然解密密钥p是由公开密钥m决定的，但却不能根据m计算出q。  
+
+正是基于这种理论，1978年出现了著名的RSA算法，它通常是先生成一对RSA 密钥，其中之一是保密密钥，由用户保存；另一个为公开密钥，可对外公开，甚至可在网络服务器中注册。为提高保密强度，RSA密钥至少为500位长，一般推荐使用1024位。这就使加密的计算量很大。  
+
+这里还忘了说了这个公钥m私钥p怎么用的问题，一般解释为你拿一个去加密，另一个才可以解开。  
+
+
+  
+
+# SSH
+下面来说这个东西 SSH 为建立在应用层基础上的安全协议。SSH 是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。SSH最初是UNIX系统上的一个程序，后来又迅速扩展到其他操作平台。  
+上面是百度百科，用人话说就是他在传输过程中是加密了的，保证了中间人听了也听不懂。
+有两种方式：  
+1.每次传输输入用户密码 这个一般都会烦死 然后跳楼
+2.生成一堆钥匙，公钥放在服务器，私钥你捏在手上，一直用这个传。这个然你怀疑是不是都没有加过密。。。。
+
+# github 在windows下的配置
+这就好说了 我们生成一堆这个钥匙 公钥挂给github端 私钥揣在包包头 欧耶
+win的cmd是不得行的 需要用git工具的命令行
+1.打开git bash 一定要用这个不要用win的cmd  
+{% highlight bash %}
+    $ cd ~/.ssh
+    bash: cd: /c/Users/Administrator/.ssh: No such file or directory
+{% endhighlight %}
+  
+结果表示目录不存在，创建即可  
+2.生成ssh一对密钥
+{% highlight bash %}
+    $ ssh-keygen -t rsa -C "your_email@example.com"
+{% endhighlight %}
+  
+
+其中那个邮箱是你的自己的登录github的那个
+代码参数含义：
+* -t 指定密钥类型，默认是 rsa ，可以省略。
+* -C 设置注释文字，比如邮箱。
+* -f 指定密钥文件存储文件名。
+就安排了出来是这个结果
+{% highlight bash %}
+$ ssh-keygen -t rsa -C "xxxxxx@gmail.com"(这里隐去真实地址)
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Administrator/.ssh/id_rsa):
+Created directory '/c/Users/Administrator/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Administrator/.ssh/id_rsa.
+Your public key has been saved in /c/Users/Administrator/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:eOOtYIsIRgKBU77zC9VPWXr7s/SmQwhfvMgPjS7dpKQ wangjizhu@gmail.com
+The key's randomart image is:
++---[RSA 2048]----+
+|o..              |
+|oo               |
+|...       ..     |
+|.  . . ..+  o    |
+|..o . o S+.* .   |
+|o  +   = +O.=    |
+|... . o o=oB.    |
+|.. o + oE.+o=..  |
+|  . o . ..  +*.  |
++----[SHA256]-----+
+{% endhighlight %}
+下面那个什么图看起来有点神秘哈哈哈  
+是不是青蛙去旅行回来了  
+
+
+然后里面说了你的私钥是/c/Users/Administrator/.ssh/id_rsa.  
+公钥public是/c/Users/Administrator/.ssh/id_rsa.pub.  
+
+然后把公钥粘贴到github网站上面有个放公钥的地方
+然后以后每次push 就啥子密码都不用输入了  
+登录你的github，头像处下拉框选择settings。
+进入设置页后点击侧边栏的SSH and GPG keys按钮。
+点击New SSH key,title可以任意填，
+生成的公钥id_rsa.pub的内容复制到这里的key输入框中。
+
+最后在本地确认一下就可以了
+{% highlight bash %}
+$ ssh -T git@github.com
+The authenticity of host 'github.com (192.30.255.112)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? y
+Please type 'yes' or 'no': yes
+Warning: Permanently added 'github.com,192.30.255.112' (RSA) to the list of known hosts.
+Hi wangjizhu! You've successfully authenticated, but GitHub does not provide shell access.
+{% endhighlight %}
+
+
+最后提醒一下 如果要是从https鞋换成ssh的需要一个命令
+先去仓库页面找到ssh的地址是什么一般长的这个样子  
+git@github.com后面一串  
+而https是https开头的  
+
+然后运行  
+{% highlight bash %}
+$git remote set-url origin [ssh的url]
+{% endhighlight %}
+就换了  
+
+<p align="right">Jude</p> 
+<p align="right">2018年1月28日</p>
