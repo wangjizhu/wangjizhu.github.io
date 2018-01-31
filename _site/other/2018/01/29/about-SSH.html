@@ -117,7 +117,7 @@ Enter same passphrase again:
 Your identification has been saved <span class="k">in</span> /c/Users/Administrator/.ssh/id_rsa.
 Your public key has been saved <span class="k">in</span> /c/Users/Administrator/.ssh/id_rsa.pub.
 The key fingerprint is:
-SHA256:eOOtYIsIRgKBU77zC9VPWXr7s/SmQwhfvMgPjS7dpKQ wangjizhu@gmail.com
+SHA256:eOOtYIsIRgKBU77zC9VPWXr7s/SmQwhfvMgPjS7dpKQ xxxxxxxx@gmail.com
 The key<span class="s1">'s randomart image is:
 +---[RSA 2048]----+
 |o..              |
@@ -153,6 +153,17 @@ Are you sure you want to continue connecting (yes/no)? y
 Please type '</span><span class="nb">yes</span><span class="s1">' or '</span>no<span class="s1">': yes
 Warning: Permanently added '</span>github.com,192.30.255.112<span class="s1">' (RSA) to the list of known hosts.
 Hi wangjizhu! You'</span>ve successfully authenticated, but GitHub does not provide shell access.</code></pre></figure>
+
+<p>最后提醒一下 如果要是从https鞋换成ssh的需要一个命令
+先去仓库页面找到ssh的地址是什么一般长的这个样子<br />
+git@github.com后面一串<br />
+而https是https开头的</p>
+
+<p>然后运行</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$git</span> remote set-url origin <span class="o">[</span>ssh的url]</code></pre></figure>
+
+<p>就换了</p>
 
 <p align="right">Jude</p>
 <p align="right">2018年1月28日</p>
