@@ -65,7 +65,7 @@ Enter same passphrase again:
 Your identification has been saved in /c/Users/Administrator/.ssh/id_rsa.
 Your public key has been saved in /c/Users/Administrator/.ssh/id_rsa.pub.
 The key fingerprint is:
-SHA256:eOOtYIsIRgKBU77zC9VPWXr7s/SmQwhfvMgPjS7dpKQ wangjizhu@gmail.com
+SHA256:eOOtYIsIRgKBU77zC9VPWXr7s/SmQwhfvMgPjS7dpKQ xxxxxxxx@gmail.com
 The key's randomart image is:
 +---[RSA 2048]----+
 |o..              |
