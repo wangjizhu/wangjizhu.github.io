@@ -6,13 +6,70 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 01 Feb 2018 01:43:53 +0800</pubDate>
-    <lastBuildDate>Thu, 01 Feb 2018 01:43:53 +0800</lastBuildDate>
-    <generator>Jekyll v3.7.0</generator>
+    <pubDate>Wed, 07 Feb 2018 00:45:24 +0800</pubDate>
+    <lastBuildDate>Wed, 07 Feb 2018 00:45:24 +0800</lastBuildDate>
+    <generator>Jekyll v3.6.2</generator>
+    
+      <item>
+        <title>thinkpad在ubuntu下面没有无线网卡的解决</title>
+        <description>&lt;p&gt;太多坑 跳了很多 写点日志 免得又跳 跳了很多&lt;/p&gt;
+
+&lt;p&gt;自己看 只写要点&lt;/p&gt;
+
+&lt;h1 id=&quot;linux-安装&quot;&gt;Linux 安装&lt;/h1&gt;
+&lt;p&gt;T460p 挂了 第二次挂了。。。 屏幕排线挂了 修好了发现尼玛grub不见了&lt;br /&gt;
+本来装的双系统 怎么直接进windows了。。。。&lt;br /&gt;
+重新装吧 非常简单&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;下载一个ubuntu的镜像 现在是16.。。。&lt;/li&gt;
+  &lt;li&gt;用一个叫什么的工具把镜像写入u盘&lt;/li&gt;
+  &lt;li&gt;u盘启动进入live cd&lt;/li&gt;
+  &lt;li&gt;桌面上有一个图标直接装即可&lt;/li&gt;
+  &lt;li&gt;记得装纯英文的 你会后悔的
+    &lt;ul&gt;
+      &lt;li&gt;坑 也没有什么坑 就是装个系统这么麻烦Linux分区 要注意跟win不兼容 其他都是常识 ext4  要有一个swap
+在先win后lin的情况下他会自动给你注入grub2 仔细观察安装进度下面会显示 installing grub2
+然后非常自觉地把ubuntu写到了第一个。。。。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;无线网卡驱动&quot;&gt;无线网卡驱动&lt;/h1&gt;
+&lt;p&gt;在live CD载入的系统中 无线一点问题都没有 正常上网
+但是安装完成进去后发现。。。。。。 没有无线网卡了 也就是说必须插入网线 这是一个什么鬼&lt;br /&gt;
+幸好有个乐视手机 usb插上去 勾选“usb共享上网”&lt;br /&gt;
+然后手机被识别成一个usb网卡就自动链接了。。。
+然后就是 搜了一整天解决方案 什么都试过了 最后才成功 所以记录下：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;首先使用uname -a查看这个版本的linux内核4.13.0-32-generic&lt;/li&gt;
+  &lt;li&gt;然后用ifconfig -a 看没有wlan0 没有无线网卡驱动&lt;/li&gt;
+  &lt;li&gt;lshw 列举硬件列表查看 实际上无线网卡是有的 但是状态不对 product一项显示器设备是啥product: Wireless 8260 这是一个intel的无线网卡&lt;/li&gt;
+  &lt;li&gt;在iwlwifi网站上查看 实际上4.1内核集成了对这款网卡的驱动的 但是你妹就是不识别&lt;br /&gt;
+&lt;a href=&quot;https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi&quot;&gt;https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi&lt;/a&gt;&lt;br /&gt;
+这个网站往下面翻 翻到自己的网卡 和内核号对应的驱动下载 下来是一个压缩包 解开里面有.ucode文件
+按照说明文件cp到这里&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;# cp iwlwifi-*.ucode /lib/firmware&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;最后重启就好
+可以先update一下内核号&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install Linux-generic-lts-wily&lt;/code&gt;&lt;br /&gt;
+重启了无数次没用 最后拔了电源电池也没有 后来自己就有了 不知所云
+后来稳定的一比&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 06 Feb 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/linux/2018/02/06/ubuntu-without-wifi.html</link>
+        <guid isPermaLink="true">http://localhost:4000/linux/2018/02/06/ubuntu-without-wifi.html</guid>
+        
+        
+        <category>linux</category>
+        
+      </item>
     
       <item>
         <title>RSA算法原理</title>
-        <description>&lt;p&gt;上一篇简单介绍了RSA，这里在非常具体的讲一下，关于数学的部分直接给结论，没有证明最多在后面提一下是什么&lt;/p&gt;
+        <description>&lt;p&gt;上一篇简单介绍了RSA，这里在非常具体的讲一下，关于数学的部分直接给结论，没有证明最多在后面提一下是什么????&lt;/p&gt;
 
 &lt;p&gt;文章来源于网络上一篇叫做《RSA算法原理》的文章 非常的好 但是没法都撸过来&lt;br /&gt;
 这是目前地球上最重要的加密算法。&lt;/p&gt;
@@ -180,7 +237,7 @@ win的cmd是不得行的 需要用git工具的命令行
 &lt;p&gt;结果表示目录不存在，创建即可&lt;br /&gt;
 2.生成ssh一对密钥&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh-keygen &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; rsa &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;your_email@example.com&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh-keygen -t rsa -C &lt;span class=&quot;s2&quot;&gt;&quot;your_email@example.com&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;其中那个邮箱是你的自己的登录github的那个
 代码参数含义：&lt;/p&gt;
@@ -191,10 +248,10 @@ win的cmd是不得行的 需要用git工具的命令行
 就安排了出来是这个结果&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh-keygen &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; rsa &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;xxxxxx@gmail.com&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;这里隐去真实地址&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ssh-keygen -t rsa -C &lt;span class=&quot;s2&quot;&gt;&quot;xxxxxx@gmail.com&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;这里隐去真实地址&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 Generating public/private rsa key pair.
 Enter file &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;which to save the key &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;/c/Users/Administrator/.ssh/id_rsa&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
-Created directory &lt;span class=&quot;s1&quot;&gt;'/c/Users/Administrator/.ssh'&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+Created directory &lt;span class=&quot;s1&quot;&gt;'/c/Users/Administrator/.ssh'&lt;/span&gt;.
 Enter passphrase &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;empty &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;no passphrase&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
 Enter same passphrase again:
 Your identification has been saved &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; /c/Users/Administrator/.ssh/id_rsa.
@@ -229,11 +286,11 @@ The key&lt;span class=&quot;s1&quot;&gt;'s randomart image is:
 
 &lt;p&gt;最后在本地确认一下就可以了&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh &lt;span class=&quot;nt&quot;&gt;-T&lt;/span&gt; git@github.com
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ssh -T git@github.com
 The authenticity of host &lt;span class=&quot;s1&quot;&gt;'github.com (192.30.255.112)'&lt;/span&gt; can&lt;span class=&quot;s1&quot;&gt;'t be established.
 RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
 Are you sure you want to continue connecting (yes/no)? y
-Please type '&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;yes&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' or '&lt;/span&gt;no&lt;span class=&quot;s1&quot;&gt;': yes
+Please type '&lt;/span&gt;yes&lt;span class=&quot;s1&quot;&gt;' or '&lt;/span&gt;no&lt;span class=&quot;s1&quot;&gt;': yes
 Warning: Permanently added '&lt;/span&gt;github.com,192.30.255.112&lt;span class=&quot;s1&quot;&gt;' (RSA) to the list of known hosts.
 Hi wangjizhu! You'&lt;/span&gt;ve successfully authenticated, but GitHub does not provide shell access.&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -244,7 +301,7 @@ git@github.com后面一串&lt;br /&gt;
 
 &lt;p&gt;然后运行&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$git&lt;/span&gt; remote set-url origin &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;ssh的url]&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$git&lt;/span&gt; remote &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;-url origin &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;ssh的url]&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;就换了&lt;/p&gt;
 

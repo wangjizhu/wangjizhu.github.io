@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>大帅归来</title>
-  <meta name="description" content="The world has kissed my soul with its pain, asking for its return in songs. 世界以痛吻我，我要报之以歌。
-">
+  <title>thinkpad在ubuntu下面没有无线网卡的解决</title>
+  <meta name="description" content="太多坑 跳了很多 写点日志 免得又跳 跳了很多">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/linux/2018/02/06/ubuntu-without-wifi.html">
   <link rel="alternate" type="application/rss+xml" title="大帅归来" href="http://localhost:4000/feed.xml">
 </head>
 
@@ -55,82 +54,63 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">thinkpad在ubuntu下面没有无线网卡的解决</h1>
+    <p class="post-meta"><time datetime="2018-02-06T00:00:00+08:00" itemprop="datePublished">Feb 6, 2018</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>太多坑 跳了很多 写点日志 免得又跳 跳了很多</p>
+
+<p>自己看 只写要点</p>
+
+<h1 id="linux-安装">Linux 安装</h1>
+<p>T460p 挂了 第二次挂了。。。 屏幕排线挂了 修好了发现尼玛grub不见了<br />
+本来装的双系统 怎么直接进windows了。。。。<br />
+重新装吧 非常简单</p>
+<ol>
+  <li>下载一个ubuntu的镜像 现在是16.。。。</li>
+  <li>用一个叫什么的工具把镜像写入u盘</li>
+  <li>u盘启动进入live cd</li>
+  <li>桌面上有一个图标直接装即可</li>
+  <li>记得装纯英文的 你会后悔的
+    <ul>
+      <li>坑 也没有什么坑 就是装个系统这么麻烦Linux分区 要注意跟win不兼容 其他都是常识 ext4  要有一个swap
+在先win后lin的情况下他会自动给你注入grub2 仔细观察安装进度下面会显示 installing grub2
+然后非常自觉地把ubuntu写到了第一个。。。。</li>
+    </ul>
+  </li>
+</ol>
+
+<h1 id="无线网卡驱动">无线网卡驱动</h1>
+<p>在live CD载入的系统中 无线一点问题都没有 正常上网
+但是安装完成进去后发现。。。。。。 没有无线网卡了 也就是说必须插入网线 这是一个什么鬼<br />
+幸好有个乐视手机 usb插上去 勾选“usb共享上网”<br />
+然后手机被识别成一个usb网卡就自动链接了。。。
+然后就是 搜了一整天解决方案 什么都试过了 最后才成功 所以记录下：</p>
+<ol>
+  <li>首先使用uname -a查看这个版本的linux内核4.13.0-32-generic</li>
+  <li>然后用ifconfig -a 看没有wlan0 没有无线网卡驱动</li>
+  <li>lshw 列举硬件列表查看 实际上无线网卡是有的 但是状态不对 product一项显示器设备是啥product: Wireless 8260 这是一个intel的无线网卡</li>
+  <li>在iwlwifi网站上查看 实际上4.1内核集成了对这款网卡的驱动的 但是你妹就是不识别<br />
+<a href="https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi">https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi</a><br />
+这个网站往下面翻 翻到自己的网卡 和内核号对应的驱动下载 下来是一个压缩包 解开里面有.ucode文件
+按照说明文件cp到这里<br />
+<code class="highlighter-rouge"># cp iwlwifi-*.ucode /lib/firmware</code></li>
+</ol>
+
+<p>最后重启就好
+可以先update一下内核号<br />
+<code class="highlighter-rouge">sudo apt-get install Linux-generic-lts-wily</code><br />
+重启了无数次没用 最后拔了电源电池也没有 后来自己就有了 不知所云
+后来稳定的一比</p>
 
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Feb 6, 2018</span>
+  </div>
 
-        <h2>
-          <a class="post-link" href="/linux/2018/02/06/ubuntu-without-wifi.html">thinkpad在ubuntu下面没有无线网卡的解决</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Feb 1, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/other/2018/02/01/RSA.html">RSA算法原理</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 29, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/other/2018/01/29/about-SSH.html">关于SSH</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 28, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/other/2018/01/28/about-enter.html">关于回车的故事</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 21, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/other/2018/01/21/ying-ping.html">这是一篇影评</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 28, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/other/2017/09/28/zou-si-fang.html">游记</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 30, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/other/2017/08/30/first-day.html">重新用回Linux</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 29, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/jekyll/update/2017/08/29/welcome-to-jekyll.html">Welcome to Jekyll!</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-
-</div>
+</article>
 
       </div>
     </div>

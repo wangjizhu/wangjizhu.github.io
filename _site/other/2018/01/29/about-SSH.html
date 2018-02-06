@@ -97,7 +97,7 @@ win的cmd是不得行的 需要用git工具的命令行
 <p>结果表示目录不存在，创建即可<br />
 2.生成ssh一对密钥</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    <span class="nv">$ </span>ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-C</span> <span class="s2">"your_email@example.com"</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    <span class="nv">$ </span>ssh-keygen -t rsa -C <span class="s2">"your_email@example.com"</span></code></pre></figure>
 
 <p>其中那个邮箱是你的自己的登录github的那个
 代码参数含义：</p>
@@ -108,10 +108,10 @@ win的cmd是不得行的 需要用git工具的命令行
 就安排了出来是这个结果</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-C</span> <span class="s2">"xxxxxx@gmail.com"</span><span class="o">(</span>这里隐去真实地址<span class="o">)</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>ssh-keygen -t rsa -C <span class="s2">"xxxxxx@gmail.com"</span><span class="o">(</span>这里隐去真实地址<span class="o">)</span>
 Generating public/private rsa key pair.
 Enter file <span class="k">in </span>which to save the key <span class="o">(</span>/c/Users/Administrator/.ssh/id_rsa<span class="o">)</span>:
-Created directory <span class="s1">'/c/Users/Administrator/.ssh'</span><span class="nb">.</span>
+Created directory <span class="s1">'/c/Users/Administrator/.ssh'</span>.
 Enter passphrase <span class="o">(</span>empty <span class="k">for </span>no passphrase<span class="o">)</span>:
 Enter same passphrase again:
 Your identification has been saved <span class="k">in</span> /c/Users/Administrator/.ssh/id_rsa.
@@ -146,11 +146,11 @@ The key<span class="s1">'s randomart image is:
 
 <p>最后在本地确认一下就可以了</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>ssh <span class="nt">-T</span> git@github.com
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>ssh -T git@github.com
 The authenticity of host <span class="s1">'github.com (192.30.255.112)'</span> can<span class="s1">'t be established.
 RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
 Are you sure you want to continue connecting (yes/no)? y
-Please type '</span><span class="nb">yes</span><span class="s1">' or '</span>no<span class="s1">': yes
+Please type '</span>yes<span class="s1">' or '</span>no<span class="s1">': yes
 Warning: Permanently added '</span>github.com,192.30.255.112<span class="s1">' (RSA) to the list of known hosts.
 Hi wangjizhu! You'</span>ve successfully authenticated, but GitHub does not provide shell access.</code></pre></figure>
 
@@ -161,7 +161,7 @@ git@github.com后面一串<br />
 
 <p>然后运行</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$git</span> remote set-url origin <span class="o">[</span>ssh的url]</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$git</span> remote <span class="nb">set</span>-url origin <span class="o">[</span>ssh的url]</code></pre></figure>
 
 <p>就换了</p>
 
