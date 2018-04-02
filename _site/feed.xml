@@ -6,9 +6,35 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 07 Feb 2018 00:45:24 +0800</pubDate>
-    <lastBuildDate>Wed, 07 Feb 2018 00:45:24 +0800</lastBuildDate>
+    <pubDate>Mon, 02 Apr 2018 11:11:48 +0800</pubDate>
+    <lastBuildDate>Mon, 02 Apr 2018 11:11:48 +0800</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
+    
+      <item>
+        <title>ubuntu和win7系统时间不一致</title>
+        <description>&lt;p&gt;ubuntu+win7 每次切换时间都不一样 怎么都不行 用一下这个方法&lt;/p&gt;
+
+&lt;h1 id=&quot;ubuntu下面操作&quot;&gt;ubuntu下面操作&lt;/h1&gt;
+
+&lt;p&gt;先在ubuntu下更新一下时间，确保时间无误：&lt;/p&gt;
+
+&lt;p&gt;``sudo apt-get install ntpdate&lt;/p&gt;
+
+&lt;p&gt;``sudo ntpdate time.windows.com&lt;/p&gt;
+
+&lt;p&gt;然后将时间更新到硬件上：&lt;/p&gt;
+
+&lt;p&gt;``sudo hwclock –localtime –systohc&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 07 Feb 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/linux/2018/02/07/win-linux-time.html</link>
+        <guid isPermaLink="true">http://localhost:4000/linux/2018/02/07/win-linux-time.html</guid>
+        
+        
+        <category>linux</category>
+        
+      </item>
     
       <item>
         <title>thinkpad在ubuntu下面没有无线网卡的解决</title>

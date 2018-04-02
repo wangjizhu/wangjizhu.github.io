@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>大帅归来</title>
-  <meta name="description" content="The world has kissed my soul with its pain, asking for its return in songs. 世界以痛吻我，我要报之以歌。
-">
+  <title>ubuntu和win7系统时间不一致</title>
+  <meta name="description" content="ubuntu+win7 每次切换时间都不一样 怎么都不行 用一下这个方法">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/linux/2018/02/07/win-linux-time.html">
   <link rel="alternate" type="application/rss+xml" title="大帅归来" href="http://localhost:4000/feed.xml">
 </head>
 
@@ -55,90 +54,32 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">ubuntu和win7系统时间不一致</h1>
+    <p class="post-meta"><time datetime="2018-02-07T00:00:00+08:00" itemprop="datePublished">Feb 7, 2018</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>ubuntu+win7 每次切换时间都不一样 怎么都不行 用一下这个方法</p>
+
+<h1 id="ubuntu下面操作">ubuntu下面操作</h1>
+
+<p>先在ubuntu下更新一下时间，确保时间无误：</p>
+
+<p>``sudo apt-get install ntpdate</p>
+
+<p>``sudo ntpdate time.windows.com</p>
+
+<p>然后将时间更新到硬件上：</p>
+
+<p>``sudo hwclock –localtime –systohc</p>
 
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Feb 7, 2018</span>
+  </div>
 
-        <h2>
-          <a class="post-link" href="/linux/2018/02/07/win-linux-time.html">ubuntu和win7系统时间不一致</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Feb 6, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/linux/2018/02/06/ubuntu-without-wifi.html">thinkpad在ubuntu下面没有无线网卡的解决</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Feb 1, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/other/2018/02/01/RSA.html">RSA算法原理</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 29, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/other/2018/01/29/about-SSH.html">关于SSH</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 28, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/other/2018/01/28/about-enter.html">关于回车的故事</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 21, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/other/2018/01/21/ying-ping.html">这是一篇影评</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 28, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/other/2017/09/28/zou-si-fang.html">游记</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 30, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/other/2017/08/30/first-day.html">重新用回Linux</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 29, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/jekyll/update/2017/08/29/welcome-to-jekyll.html">Welcome to Jekyll!</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-
-</div>
+</article>
 
       </div>
     </div>
