@@ -68,13 +68,17 @@
 
 <p>先在ubuntu下更新一下时间，确保时间无误：</p>
 
-<p>``sudo apt-get install ntpdate</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install ntpdate
 
-<p>``sudo ntpdate time.windows.com</p>
+sudo ntpdate time.windows.com
+</code></pre>
+</div>
 
 <p>然后将时间更新到硬件上：</p>
 
-<p>``sudo hwclock –localtime –systohc</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo hwclock --localtime --systohc
+</code></pre>
+</div>
 
 
   </div>
