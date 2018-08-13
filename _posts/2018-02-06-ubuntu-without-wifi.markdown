@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title:  "thinkpad在ubuntu下面没有无线网卡的解决"
 date:   2018-02-06 
