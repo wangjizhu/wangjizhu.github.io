@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title:  "ubuntu和win7系统时间不一致"
 date:   2018-02-07 
