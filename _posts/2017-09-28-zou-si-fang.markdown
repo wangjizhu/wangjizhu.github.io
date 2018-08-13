@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "游记"
-date:   2017-09-28 00:32:55 +0800
+date:   2017-09-28
 categories: other
 ---
 为了保证每个页面URL的唯一性和可读性，jekyll规范的做法是每篇文章题目要翻译成英文并填写到规定的位置，比如这篇文章的标题叫zou-si-fang（走四方）
