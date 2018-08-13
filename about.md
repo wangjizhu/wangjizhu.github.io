@@ -4,12 +4,5 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
-
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+我常常幻想未来的景象，梦想自己可能会成为的角色，或许是诗人、预言者、画家等等。然而这些都不算什么。我存在的意义并不是为了写诗，预言或作画，任何人生存的意义都不应是这些。这些只是旁枝末节。对每个人而言，真正的职责只有一个：找到自我。无论他的归宿是诗人还是疯子，是先知还是罪犯——这些其实和他无关，毫不重要。他的职责只是找到自己的命运——而不是他人的命运——然后在心中坚守其一生，全心全意，永不停息。所有其它的路都是不完整的，是人的逃避方式，是对大众理想的懦弱回归，是随波逐流，是对内心的恐惧。 
+——赫尔曼.黑塞《德米安：埃米尔.辛克莱的彷徨少年时》
