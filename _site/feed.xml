@@ -6,9 +6,9 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 02 Apr 2018 11:16:50 +0800</pubDate>
-    <lastBuildDate>Mon, 02 Apr 2018 11:16:50 +0800</lastBuildDate>
-    <generator>Jekyll v3.6.2</generator>
+    <pubDate>Thu, 23 Feb 2023 21:49:40 +0800</pubDate>
+    <lastBuildDate>Thu, 23 Feb 2023 21:49:40 +0800</lastBuildDate>
+    <generator>Jekyll v4.3.2</generator>
     
       <item>
         <title>ubuntu和win7系统时间不一致</title>
@@ -18,17 +18,15 @@
 
 &lt;p&gt;先在ubuntu下更新一下时间，确保时间无误：&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install ntpdate
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install ntpdate
 
 sudo ntpdate time.windows.com
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;然后将时间更新到硬件上：&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo hwclock --localtime --systohc
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo hwclock --localtime --systohc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 </description>
         <pubDate>Wed, 07 Feb 2018 00:00:00 +0800</pubDate>
@@ -78,12 +76,12 @@ sudo ntpdate time.windows.com
 &lt;a href=&quot;https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi&quot;&gt;https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi&lt;/a&gt;&lt;br /&gt;
 这个网站往下面翻 翻到自己的网卡 和内核号对应的驱动下载 下来是一个压缩包 解开里面有.ucode文件
 按照说明文件cp到这里&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;# cp iwlwifi-*.ucode /lib/firmware&lt;/code&gt;&lt;/li&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;# cp iwlwifi-*.ucode /lib/firmware&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;最后重启就好
 可以先update一下内核号&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install Linux-generic-lts-wily&lt;/code&gt;&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo apt-get install Linux-generic-lts-wily&lt;/code&gt;&lt;br /&gt;
 重启了无数次没用 最后拔了电源电池也没有 后来自己就有了 不知所云
 后来稳定的一比&lt;/p&gt;
 
@@ -122,25 +120,25 @@ sudo ntpdate time.windows.com
 爱丽丝选择了61和53。（实际应用中，这两个质数越大，就越难破解。）&lt;br /&gt;
 第二步，计算p和q的乘积n。&lt;br /&gt;
 爱丽丝就把61和53相乘。&lt;br /&gt;
-	&lt;code class=&quot;highlighter-rouge&quot;&gt;n = 61×53 = 3233&lt;/code&gt;&lt;br /&gt;
+	&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n = 61×53 = 3233&lt;/code&gt;&lt;br /&gt;
 n的长度就是密钥长度。3233写成二进制是110010100001，一共有12位，所以这个密钥就是12位。&lt;br /&gt;
 实际应用中，RSA密钥一般是1024位，重要场合则为2048位。&lt;br /&gt;
 第三步，计算n的欧拉函数φ(n)。&lt;br /&gt;
 根据公式：&lt;br /&gt;
-	&lt;code class=&quot;highlighter-rouge&quot;&gt;φ(n) = (p-1)(q-1)&lt;/code&gt;&lt;/p&gt;
+	&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;φ(n) = (p-1)(q-1)&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;爱丽丝算出φ(3233)等于60×52，即3120。&lt;br /&gt;
 第四步，随机选择一个整数e，要求在1到3120之间&lt;br /&gt;
 爱丽丝随机选择了17。（实际应用中，常常选择65537。）&lt;br /&gt;
 第五步，计算e对于φ(n)的模反元素d。&lt;br /&gt;
 所谓”模反元素”就是指有一个整数d，可以使得ed被φ(n)除的余数为1。&lt;br /&gt;
-	&lt;code class=&quot;highlighter-rouge&quot;&gt;ed ≡ 1 (mod φ(n))&lt;/code&gt;&lt;br /&gt;
+	&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ed ≡ 1 (mod φ(n))&lt;/code&gt;&lt;br /&gt;
 这个式子等价于&lt;br /&gt;
-	&lt;code class=&quot;highlighter-rouge&quot;&gt;ed - 1 = kφ(n)&lt;/code&gt;&lt;br /&gt;
+	&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ed - 1 = kφ(n)&lt;/code&gt;&lt;br /&gt;
 于是，找到模反元素d，实质上就是对下面这个二元一次方程求解。&lt;br /&gt;
-	&lt;code class=&quot;highlighter-rouge&quot;&gt;ex + φ(n)y = 1&lt;/code&gt;&lt;br /&gt;
+	&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ex + φ(n)y = 1&lt;/code&gt;&lt;br /&gt;
 已知 e=17, φ(n)=3120，&lt;br /&gt;
-	&lt;code class=&quot;highlighter-rouge&quot;&gt;17x + 3120y = 1&lt;/code&gt;&lt;br /&gt;
+	&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;17x + 3120y = 1&lt;/code&gt;&lt;br /&gt;
 这个方程可以用”扩展欧几里得算法”求解。&lt;br /&gt;
 总之，爱丽丝算出一组整数解为 (x,y)=(2753,-15)，y直接扔掉没有毛用，只留下 d=2753。&lt;br /&gt;
 至此所有计算完成。&lt;br /&gt;
@@ -267,7 +265,7 @@ win的cmd是不得行的 需要用git工具的命令行
 &lt;p&gt;结果表示目录不存在，创建即可&lt;br /&gt;
 2.生成ssh一对密钥&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh-keygen -t rsa -C &lt;span class=&quot;s2&quot;&gt;&quot;your_email@example.com&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh-keygen &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; rsa &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;your_email@example.com&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;其中那个邮箱是你的自己的登录github的那个
 代码参数含义：&lt;/p&gt;
@@ -278,17 +276,17 @@ win的cmd是不得行的 需要用git工具的命令行
 就安排了出来是这个结果&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ssh-keygen -t rsa -C &lt;span class=&quot;s2&quot;&gt;&quot;xxxxxx@gmail.com&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;这里隐去真实地址&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh-keygen &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; rsa &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;xxxxxx@gmail.com&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;这里隐去真实地址&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 Generating public/private rsa key pair.
 Enter file &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;which to save the key &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;/c/Users/Administrator/.ssh/id_rsa&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
-Created directory &lt;span class=&quot;s1&quot;&gt;'/c/Users/Administrator/.ssh'&lt;/span&gt;.
+Created directory &lt;span class=&quot;s1&quot;&gt;&apos;/c/Users/Administrator/.ssh&apos;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
 Enter passphrase &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;empty &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;no passphrase&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
 Enter same passphrase again:
 Your identification has been saved &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; /c/Users/Administrator/.ssh/id_rsa.
 Your public key has been saved &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; /c/Users/Administrator/.ssh/id_rsa.pub.
 The key fingerprint is:
 SHA256:eOOtYIsIRgKBU77zC9VPWXr7s/SmQwhfvMgPjS7dpKQ xxxxxxxx@gmail.com
-The key&lt;span class=&quot;s1&quot;&gt;'s randomart image is:
+The key&lt;span class=&quot;s1&quot;&gt;&apos;s randomart image is:
 +---[RSA 2048]----+
 |o..              |
 |oo               |
@@ -316,13 +314,13 @@ The key&lt;span class=&quot;s1&quot;&gt;'s randomart image is:
 
 &lt;p&gt;最后在本地确认一下就可以了&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ssh -T git@github.com
-The authenticity of host &lt;span class=&quot;s1&quot;&gt;'github.com (192.30.255.112)'&lt;/span&gt; can&lt;span class=&quot;s1&quot;&gt;'t be established.
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh &lt;span class=&quot;nt&quot;&gt;-T&lt;/span&gt; git@github.com
+The authenticity of host &lt;span class=&quot;s1&quot;&gt;&apos;github.com (192.30.255.112)&apos;&lt;/span&gt; can&lt;span class=&quot;s1&quot;&gt;&apos;t be established.
 RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
 Are you sure you want to continue connecting (yes/no)? y
-Please type '&lt;/span&gt;yes&lt;span class=&quot;s1&quot;&gt;' or '&lt;/span&gt;no&lt;span class=&quot;s1&quot;&gt;': yes
-Warning: Permanently added '&lt;/span&gt;github.com,192.30.255.112&lt;span class=&quot;s1&quot;&gt;' (RSA) to the list of known hosts.
-Hi wangjizhu! You'&lt;/span&gt;ve successfully authenticated, but GitHub does not provide shell access.&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+Please type &apos;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;yes&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos; or &apos;&lt;/span&gt;no&lt;span class=&quot;s1&quot;&gt;&apos;: yes
+Warning: Permanently added &apos;&lt;/span&gt;github.com,192.30.255.112&lt;span class=&quot;s1&quot;&gt;&apos; (RSA) to the list of known hosts.
+Hi wangjizhu! You&apos;&lt;/span&gt;ve successfully authenticated, but GitHub does not provide shell access.&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;最后提醒一下 如果要是从https鞋换成ssh的需要一个命令
 先去仓库页面找到ssh的地址是什么一般长的这个样子&lt;br /&gt;
@@ -331,7 +329,7 @@ git@github.com后面一串&lt;br /&gt;
 
 &lt;p&gt;然后运行&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$git&lt;/span&gt; remote &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;-url origin &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;ssh的url]&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$git&lt;/span&gt; remote set-url origin &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;ssh的url]&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;就换了&lt;/p&gt;
 
@@ -481,7 +479,7 @@ CRLF&lt;/p&gt;
 &lt;p align=&quot;right&quot;&gt;Jude&lt;/p&gt;
 &lt;p align=&quot;right&quot;&gt;2017年9月28日&lt;/p&gt;
 </description>
-        <pubDate>Thu, 28 Sep 2017 00:32:55 +0800</pubDate>
+        <pubDate>Thu, 28 Sep 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/other/2017/09/28/zou-si-fang.html</link>
         <guid isPermaLink="true">http://localhost:4000/other/2017/09/28/zou-si-fang.html</guid>
         
@@ -526,17 +524,17 @@ sudo apt-get install vim&lt;br /&gt;
     
       <item>
         <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
 
 &lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Tom&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &apos;Hi, Tom&apos; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
 

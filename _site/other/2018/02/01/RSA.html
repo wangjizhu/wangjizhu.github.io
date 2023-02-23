@@ -85,25 +85,25 @@
 爱丽丝选择了61和53。（实际应用中，这两个质数越大，就越难破解。）<br />
 第二步，计算p和q的乘积n。<br />
 爱丽丝就把61和53相乘。<br />
-	<code class="highlighter-rouge">n = 61×53 = 3233</code><br />
+	<code class="language-plaintext highlighter-rouge">n = 61×53 = 3233</code><br />
 n的长度就是密钥长度。3233写成二进制是110010100001，一共有12位，所以这个密钥就是12位。<br />
 实际应用中，RSA密钥一般是1024位，重要场合则为2048位。<br />
 第三步，计算n的欧拉函数φ(n)。<br />
 根据公式：<br />
-	<code class="highlighter-rouge">φ(n) = (p-1)(q-1)</code></p>
+	<code class="language-plaintext highlighter-rouge">φ(n) = (p-1)(q-1)</code></p>
 
 <p>爱丽丝算出φ(3233)等于60×52，即3120。<br />
 第四步，随机选择一个整数e，要求在1到3120之间<br />
 爱丽丝随机选择了17。（实际应用中，常常选择65537。）<br />
 第五步，计算e对于φ(n)的模反元素d。<br />
 所谓”模反元素”就是指有一个整数d，可以使得ed被φ(n)除的余数为1。<br />
-	<code class="highlighter-rouge">ed ≡ 1 (mod φ(n))</code><br />
+	<code class="language-plaintext highlighter-rouge">ed ≡ 1 (mod φ(n))</code><br />
 这个式子等价于<br />
-	<code class="highlighter-rouge">ed - 1 = kφ(n)</code><br />
+	<code class="language-plaintext highlighter-rouge">ed - 1 = kφ(n)</code><br />
 于是，找到模反元素d，实质上就是对下面这个二元一次方程求解。<br />
-	<code class="highlighter-rouge">ex + φ(n)y = 1</code><br />
+	<code class="language-plaintext highlighter-rouge">ex + φ(n)y = 1</code><br />
 已知 e=17, φ(n)=3120，<br />
-	<code class="highlighter-rouge">17x + 3120y = 1</code><br />
+	<code class="language-plaintext highlighter-rouge">17x + 3120y = 1</code><br />
 这个方程可以用”扩展欧几里得算法”求解。<br />
 总之，爱丽丝算出一组整数解为 (x,y)=(2753,-15)，y直接扔掉没有毛用，只留下 d=2753。<br />
 至此所有计算完成。<br />
@@ -215,6 +215,12 @@ RSA算法愈可靠。
           </li>
           
 
+          
+          <li>
+            <a href="https://twitter.com/dashuaiguilai"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">dashuaiguilai</span></a>
+
+          </li>
           
         </ul>
       </div>
