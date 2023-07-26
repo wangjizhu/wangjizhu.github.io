@@ -9,6 +9,8 @@ categories: life
 该死的台风偏偏选在每一个的周末  
 --纵贯线<<亡命之徒>>  
  
+![test](https://github.com/wangjizhu/wangjizhu.github.io/raw/master/image/9bdc3441c353239858e4295f7508b8b.jpg)
+这里应该有一张测试图片
 
 # [0]区别
 躺在酒店77层的房间里  
